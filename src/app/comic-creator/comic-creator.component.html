@@ -1,0 +1,35 @@
+<body>
+    <div *ngIf="comic">
+        <button [routerLink]="['/comics']"> go back to comics
+        </button>
+           <div class=" section-padding">
+                <div class="single-title-section">
+                    <div class= "row">
+                        
+                         <div class= "col-sm-6" *ngFor="let comic1 of comic" >
+                            <h4 style="text-align: center; color: #FFEB3B;">{{ comic1.fullName }}</h4>
+                            <img width="100%" class="comic_img" src="{{ comic1.thumbnail.path }}.{{ comic1.thumbnail.extension }}">
+                            
+                           
+                       
+
+                            
+                        </div>
+                       <div class= "col-sm-6">
+                        
+         
+                    </div>
+                   
+               </div>
+            </div>
+            <button [routerLink]="['/']"> Back to home </button>
+        </div>
+        
+                
+    </div>
+    
+    </body>
+                
+          
+    
+    

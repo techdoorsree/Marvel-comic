@@ -1,0 +1,83 @@
+<body>
+<div *ngIf="character">
+    
+       <div class=" section-padding"><!---section of  first -->
+            <div class="single-title-section"><!--- single of  first -->
+                <div class= "row"><!--- row of  first -->
+                    <button [routerLink]="['/characters']"> go back to characters
+                    </button>
+                             <!--- end  of  first -->     
+                     <div class= "col-sm-6">
+                        <h2 style="text-align: center; margin: 5px;color: #FFEB3B;">{{ character.name }}</h2>
+                        <img width="100%" class="comic-img" src="{{character.thumbnail.path }}.{{ character.thumbnail.extension }}">       
+                        
+                        <button [routerLink]="['/character', character.id,'comics']"> comic details
+                        </button>
+                    </div><!--- end  of  column -->
+                   <!--- end  of  first -->
+                   
+                             <!--- end  of  first -->     
+                             <div class= "col-sm-6">
+                                    <div *ngIf="character.description">
+                                            <p><strong>Description</strong></p>
+                                            <p [innerHtml]="character.description"></p>
+                                        </div>
+                                        <div *ngIf="character.comics.available">
+                                              <h2 class = "page-header"style = "color: #FFEB3B; "><strong>Comics where {{ character.name }} appeared ({{ character.comics.available }})</strong></h2>
+                                                <ul>
+                                                    <li *ngFor="let characterComic of character.comics.items">
+                                                       <h3> {{ characterComic.name }} </h3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              >
+                                                               
+                                                        
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div *ngIf="character.series.available">
+                                                    <h2 class = "page-header" style = "color: #FFEB3B; "><strong>series where {{ character.name }} appeared ({{ character.series.available }})</strong></h2>
+                                                    <ul>
+                                                        <li *ngFor="let characterSeries of character.series.items">
+                                                            <h3> {{ characterSeries.name }} </h3>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div *ngIf="character.stories.available">
+                                                        <h2 class = "page-header" style = "color: #FFEB3B;"><strong>Stories where {{ character.name }} appeared ({{ character.stories.available }})</strong></h2>
+                                                        <ul>
+                                                            <li *ngFor="let characterStories of character.stories.items">
+                                                                <h3>  {{ characterStories.name }} </h3>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div *ngIf="character.events.available">
+                                                            <h2 class = "page-header"   style = "color: #FFEB3B; "><strong>Events where {{ character.name }} appeared ({{ character.events.available }})</strong></h2>
+                                                            <ul>
+                                                                <li *ngFor="let characterEvents of character.events.items">
+                                                                    <h3>  {{ characterEvents.name }} </h3>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div *ngIf="character.urls">
+                                                                <h2 class = "page-header" style = "color: #FFEB3B; "><strong>Urls where {{ character.name }} appeared</strong></h2>
+                                                            <ul>
+                                                                <li *ngFor="let characterUrls of character.urls">
+                                                                    <a target="a_blank" href="{{ characterUrls.url }}">{{ characterUrls.type }}</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                </div><!--- end  of  column -->
+               
+           </div><!--- row of  first -->
+        </div>
+       <!--- single of  first -->
+</div><!---section of  first -->
+       
+<!--- end  of  first -->
+
+
+
+
+
+</div><!---ng if end  of  first -->
+
+</body>

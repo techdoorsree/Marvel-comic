@@ -1,0 +1,30 @@
+
+<body>
+  <div class="well">  
+
+  <h2 style="font-style:italic"><strong>COMICS</strong></h2>
+  </div>
+  <div class="card-group" >
+      <div class="row"  *ngFor="let obj of comics" >
+          <div class="card col-md-6">
+             
+            <img class="card-img-top" style= "width:100%" src="{{ obj.thumbnail.path }}.{{ obj.thumbnail.extension }}" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card" style= "color:white;font-style:italic;background: black;">{{obj.title}}</h4>
+                <br> <br><br>
+              <p class="card-text" style= "color:white"> <BR>{{obj.description}}</p>
+            
+                </div>
+                
+          </div>
+      
+          <br><br><br>
+          <div class=" col-md-6">
+                <a [routerLink]="['/comic', obj.id]" >  <button> Get comic details </button></a>
+                
+          </div>
+      </div>
+      <br><br><br>
+  </div>
+  <br><br><br>
+</body>

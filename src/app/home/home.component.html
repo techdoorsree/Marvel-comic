@@ -1,0 +1,28 @@
+
+<body>                                
+ 
+      
+    
+      <div class= "jumbotron text-center">
+
+          <button style="color:white; background:black" *ngIf="auth.isAuthenticated()">
+              You are logged in!
+          </button>
+     <p  style= "color: #FFEB3B;"*ngIf="!auth.isAuthenticated()">
+              You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.
+     </p>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 text-center">
+              <div class="btn-group" >
+                  <button [routerLink]="['/characters']"class="btn btn-primary center-block">Characters</button> 
+                  <button [routerLink]="['/comics']" class="btn btn-primary center-block">Comics</button>
+              </div>
+          </div>
+      </div>
+      <img width="100%" src="/assets/marvel-logo.jpeg">
+      
+</body>
+<main class="container">
+    <router-outlet></router-outlet>
+  </main>

@@ -1,0 +1,73 @@
+<body>
+    <div *ngIf="comic">
+        
+           <div class=" section-padding"><!---section of  first -->
+                <div class="single-title-section"><!--- single of  first -->
+                    <div class= "row"><!--- row of  first -->
+                        <button [routerLink]="['/comics']"> go back to comics
+                        </button>
+                                 <!--- end  of  first -->     
+                         <div class= "col-sm-6">
+                            <h2 style="text-align: center;color: #FFEB3B; margin: 5px">{{ comic.title }}</h2>
+                            <img width="100%" class="comic_img" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}">
+                            
+                            
+                        </div><!--- end  of  column -->
+                       <!--- end  of  first -->
+                       
+                                 <!--- end  of  first -->     
+                                 <div class= "col-sm-6">
+                                        <div *ngIf="comic.description">
+                                                <p><strong>Description</strong></p>
+                                                <p [innerHtml]="comic.description"></p>
+                                            </div>
+                                            <div *ngIf="comic.characters.available">
+                                                    <h2 class = "page-header"style = "color: #FFEB3B; "><strong>Characters ({{ comic.characters.available }})</strong></h2>
+                                                    <ul>
+                                                        <li *ngFor="let character of comic.characters.items">
+                                                                <h3>  {{ character.name }}</h3>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div *ngIf="comic.series.available">
+                                                        <h2 class = "page-header"style = "color: #FFEB3B; "><strong> ({{ comic.series.available }})</strong></h2>
+                                                        <ul>
+                                                            <li *ngFor="let serie of comic.series.items">
+                                                               <h3> {{ serie.name }}</h3>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div *ngIf="comic.stories.available">
+                                                            <h2 class = "page-header"style = "color: #FFEB3B; "><strong>Stories ({{ comic.stories.available }})</strong></h2>
+                                                            <ul>
+                                                                <li *ngFor="let storie of comic.stories.items">
+                                                                   <h3> {{ storie.name }}</h3>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div *ngIf="comic.creators.available">
+                                                                <h2 class = "page-header" style = "color: #FFEB3B; "><strong>creators ({{ comic.creators.available}})</strong></h2>
+                                                                <ul>
+                                                                    <li *ngFor="let storie of comic.creators.items">
+                                                                       <h3> {{ storie.name }}</h3>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                          
+    <button [routerLink]="['/comic', comic.id,'creators']">creators details
+    </button>     
+                                    </div><!--- end  of  column -->
+                   
+               </div><!--- row of  first -->
+            </div>
+           <!--- single of  first -->
+    </div><!---section of  first -->
+           
+    <!--- end  of  first -->
+    
+ 
+    
+    
+    </div><!---ng if end  of  first -->
+    
+    </body>

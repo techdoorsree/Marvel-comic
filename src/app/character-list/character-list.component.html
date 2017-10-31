@@ -1,0 +1,26 @@
+<body>
+      <div class = "well">
+          CHARACTERS
+      </div>
+    <div class="card-group" >
+        <div class="row"  *ngFor="let obj of characters" >
+            <div class="card col-md-6">
+              <img class="card-img-top" style= "width:100%" src="{{ obj.thumbnail.path }}.{{ obj.thumbnail.extension }}" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title"style= "color:white">{{obj.name}}</h4>
+                <p class="card-text" style= "color:white">{{obj.description}}</p>
+              
+                  </div>
+                  
+            </div>
+        
+            <br><br><br>
+            <div class=" col-md-6">
+                  <a [routerLink]="['/character', obj.id]" >  <button> Get character details </button></a>
+                  
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <br><br><br>
+</body>

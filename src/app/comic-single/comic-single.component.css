@@ -1,0 +1,26 @@
+body {
+    background-color: #ec1d25; 
+    color: aqua;
+    font-family: 'TradeGothic',sans-serif;
+    font-size: 15px;
+}
+ul {
+    list-style-type: lower-roman;
+}
+a {
+    color: #ccc;
+    text-decoration: none;
+}
+h3 {
+    font-size: 15px;
+}
+button{
+    background: #323232;
+    margin: 25px;
+    color: #ff1a1a;
+    padding: 7px;
+}
+button:hover, a:hover {
+    /*opacity: 0.7;*/
+    color: white;
+}

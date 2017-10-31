@@ -1,0 +1,146 @@
+
+<body>
+  
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#">Marvel comics App</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a routerLink="/">Home</a></li>
+                
+                    <li><a [routerLink]="['/characters']">characters</a></li>
+                    <li><a [routerLink]="['/comics']">Comics</a></li>
+                  
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"  *ngIf="!auth.isAuthenticated()"(click)="auth.login()"><span class="glyphicon glyphicon-user"></span> Login In</a></li>
+                <li><a href="#"  *ngIf="auth.isAuthenticated()"(click)="auth.logout()"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="container">
+          <router-outlet></router-outlet>
+        </main>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
